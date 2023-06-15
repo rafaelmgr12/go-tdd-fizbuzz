@@ -1,6 +1,11 @@
 package main
 
-import "testing"
+import (
+	"strconv"
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func TestFizzBuzz(t *testing.T) {
 	// arrange
@@ -10,7 +15,5 @@ func TestFizzBuzz(t *testing.T) {
 	got := FizzBuzz(input)
 
 	// assert
-	if got != "1" {
-		t.Errorf(`expected "1" but got %q`, got)
-	}
+	assert.Equal(t, strconv.Itoa(input), got)
 }
