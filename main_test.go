@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestFizzBuzz(t *testing.T) {
+func TestFizzBuzz_One(t *testing.T) {
 	// arrange
 	input := 1
 
@@ -26,7 +26,5 @@ func TestFizzBuzz_Two(t *testing.T) {
 	got := FizzBuzz(input)
 
 	// assert
-	if got != "2" {
-		t.Errorf(`expected "2" but got %q`, got)
-	}
+	assert.Equal(t, strconv.Itoa(input), got)
 }
