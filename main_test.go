@@ -1,43 +1,42 @@
 package main
 
 import (
-	"strconv"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 )
 
-func TestFizzBuzz_One(t *testing.T) {
+func TestFizzBuzz(t *testing.T) {
 	// arrange
-	input := 1
+	testSuite := []struct {
+		name     string
+		input    int
+		expected string
+	}{
+		{
+			"ShouldReturnOne_WhenOneIsPassed",
+			1,
+			"1",
+		},
+		{
+			"ShouldReturnTwo_WhenTwoIsPassed",
+			2,
+			"2",
+		},
+		{
+			"ShouldReturnFour_WhenFourIsPassed",
+			4,
+			"4",
+		},
+	}
 
-	// act
-	got := FizzBuzz(input)
+	for _, tt := range testSuite {
+		t.Run(tt.name, func(t *testing.T) {
+			// act
+			got := FizzBuzz(tt.input)
 
-	// assert
-	assert.Equal(t, strconv.Itoa(input), got)
-}
-
-func TestFizzBuzz_Two(t *testing.T) {
-	// arrange
-	input := 2
-
-	// act
-	got := FizzBuzz(input)
-
-	// assert
-	assert.Equal(t, strconv.Itoa(input), got)
-}
-
-func TestFizzBuzz_Four(t *testing.T) {
-	// arrange
-	input := 4
-
-	// act
-	got := FizzBuzz(input)
-
-	// assert
-	if got != "4" {
-		t.Errorf(`expected "4" but got %q`, got)
+			// assert
+			assert.Equal(t, tt.expected, got)
+		})
 	}
 }
