@@ -38,6 +38,11 @@ func TestFizzBuzz(t *testing.T) {
 			6,
 			"Fizz",
 		},
+		{
+			"ShouldReturnBuzz_WhenFiveIsPassed",
+			5,
+			"Buzz",
+		},
 	}
 
 	for _, tt := range testSuite {
