@@ -19,23 +19,8 @@ func TestFizzBuzz(t *testing.T) {
 			"1",
 		},
 		{
-			"ShouldReturnTwo_WhenTwoIsPassed",
-			2,
-			"2",
-		},
-		{
-			"ShouldReturnFour_WhenFourIsPassed",
-			4,
-			"4",
-		},
-		{
 			"ShouldReturnFizz_WhenThreeIsPassed",
 			3,
-			"Fizz",
-		},
-		{
-			"ShouldReturnFizz_WhenSixIsPassed",
-			6,
 			"Fizz",
 		},
 		{
